@@ -15,11 +15,41 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div className="container">
-      <h1 className="title">Test</h1>
-      <p className="text">Name/Value Pair</p>
-      <form className="form">
-        <input type="text" name="username" />
+    <div class="container">
+      <h1 class="title">Test</h1>
+
+      <form class="form">
+        <label for="name-value" class="form-label">Name/Value Pair</label>
+        <input
+          type="text"
+          name="userinput"
+          id="name-value"
+          class="form-input"
+        />
+        <button type="submit" class="btn-add"></button>
+
+        <label for="name-value-list" class="form-label-list"
+          >Name/Value Pair List</label
+        >
+        <textarea
+          name="inputlist"
+          id="name-value-list"
+          class="form-textarea"
+        ></textarea>
+        <ul class="form-list">
+          <li class="form-item">
+            <button class="form-list-btn">Sort by Name</button>
+          </li>
+          <li class="form-item">
+            <button class="form-list-btn">Sort by Value</button>
+          </li>
+          <li class="form-item">
+            <button class="form-list-btn">Delete</button>
+          </li>
+          <li class="form-item">
+            <button class="form-list-btn">Show XML</button>
+          </li>
+        </ul>
       </form>
     </div>
     <script type="module" src="/src/main.js"></script>
