@@ -19,37 +19,46 @@
       <h1 class="title">Test</h1>
 
       <form class="form">
-        <label for="name-value" class="form-label">Name/Value Pair</label>
-        <input
-          type="text"
-          name="userinput"
-          id="name-value"
-          class="form-input"
-        />
-        <button type="submit" class="btn-add"></button>
+        <div class="input-btn-box">
+          <div class="input-box">
+            <label for="name-value" class="form-label">Name/Value Pair</label>
+            <input
+              type="text"
+              name="userinput"
+              id="name-value"
+              class="form-input"
+            />
+          </div>
+          <button type="submit" class="btn-add">Add</button>
+        </div>
 
-        <label for="name-value-list" class="form-label-list"
-          >Name/Value Pair List</label
-        >
-        <textarea
-          name="inputlist"
-          id="name-value-list"
-          class="form-textarea"
-        ></textarea>
-        <ul class="form-list">
-          <li class="form-item">
-            <button class="form-list-btn">Sort by Name</button>
-          </li>
-          <li class="form-item">
-            <button class="form-list-btn">Sort by Value</button>
-          </li>
-          <li class="form-item">
-            <button class="form-list-btn">Delete</button>
-          </li>
-          <li class="form-item">
-            <button class="form-list-btn">Show XML</button>
-          </li>
-        </ul>
+        <div class="area-btn-box">
+          <div class="form-label-box">
+            <label for="name-value-list" class="form-label-list"
+              >Name/Value Pair List</label
+            >
+            <textarea
+              name="inputlist"
+              id="name-value-list"
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <ul class="form-list">
+            <li class="form-item">
+              <button class="form-list-btn">Sort by Name</button>
+            </li>
+            <li class="form-item">
+              <button class="form-list-btn">Sort by Value</button>
+            </li>
+            <li class="form-item">
+              <button class="form-list-btn">Delete</button>
+            </li>
+            <li class="form-item">
+              <button class="form-list-btn">Show XML</button>
+            </li>
+          </ul>
+        </div>
       </form>
     </div>
     <script type="module" src="/src/main.js"></script>

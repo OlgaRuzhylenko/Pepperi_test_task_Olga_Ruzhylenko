@@ -53,3 +53,19 @@ img {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 375px) {
+  .input-box {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 375px) {
+  .input-btn-box {
+    display: flex;
+  }
+}
+@media screen and (min-width: 375px) {
+  .area-btn-box {
+    display: flex;
+  }
+}
