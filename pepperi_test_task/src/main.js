@@ -1,10 +1,13 @@
-const mainForm = document.querySelector('form');
+const mainForm = document.querySelector('.form');
 mainForm.addEventListener('submit', handleSubmit);
+
+const textAreaInput = document.querySelector('.form-textarea');
+
+const validation = /^[a-zA-Z0-9 =]+$/;
 const inputObject = {
   name: '',
   value: '',
 };
-const validation = /^[a-zA-Z0-9=]+$/;
 
 function handleSubmit(evt) {
   evt.preventDefault();
@@ -12,9 +15,9 @@ function handleSubmit(evt) {
   const userInput = form.elements.userinput.value;
   const userInputKey = userInput.trim().split('=');
   console.log(userInputKey);
-  inputObject.name = userInputKey[0];
+  inputObject.name = userInputKey[0].trim();
 
-  inputObject.value = userInputKey[1];
+  inputObject.value = userInputKey[1].trim();
   console.log(inputObject);
 
   if (userInput === '') {
@@ -28,4 +31,7 @@ function handleSubmit(evt) {
   }
 
   form.reset();
+
+  textAreaInput.textContent = userInput;
+  console.log(typeof textAreaInput);
 }

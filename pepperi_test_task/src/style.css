@@ -69,3 +69,14 @@ img {
     display: flex;
   }
 }
+@media screen and (min-width: 375px) {
+  .title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 375px) {
+  .form-label {
+    font-size: 12px;
+  }
+}
