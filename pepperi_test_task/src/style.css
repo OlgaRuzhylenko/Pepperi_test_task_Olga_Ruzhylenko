@@ -54,29 +54,57 @@ img {
   }
 }
 @media screen and (min-width: 375px) {
+  .title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+.form {
+}
+@media screen and (min-width: 375px) {
+  .input-btn-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 375px) {
   .input-box {
     display: flex;
     flex-direction: column;
   }
 }
 @media screen and (min-width: 375px) {
-  .input-btn-box {
-    display: flex;
+  .form-label {
+    font-size: 12px;
   }
+}
+.form-input {
+}
+.btn-add {
 }
 @media screen and (min-width: 375px) {
   .area-btn-box {
     display: flex;
   }
 }
+.form-label-box {
+}
 @media screen and (min-width: 375px) {
-  .title {
-    margin-bottom: 10px;
-    text-align: center;
+  .form-label-list {
+    font-size: 12px;
   }
 }
 @media screen and (min-width: 375px) {
-  .form-label {
-    font-size: 12px;
+  .form-textarea {
+    min-height: 120px;
   }
+}
+.form-list {
+}
+.form-item {
+}
+.form-list-btn {
 }
