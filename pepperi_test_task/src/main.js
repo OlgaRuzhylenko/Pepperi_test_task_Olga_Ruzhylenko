@@ -9,22 +9,8 @@ const inputObjectArr = [];
 function handleSubmit(evt) {
   evt.preventDefault();
   const form = evt.target;
+
   const userInput = form.elements.userinput.value;
-  const userInputKey = userInput.trim().split('=');
-  console.log(userInputKey);
-  const inputObject = {};
-  inputObject.name = userInputKey[0].trim();
-
-  inputObject.value = userInputKey[1].trim();
-  console.log(inputObject);
-
-  inputObjectArr.push(inputObject);
-  const inputObjStrings = inputObjectArr.map(item => {
-    return `${item.name}: ${item.value}`;
-  });
-  const inputObjString = inputObjStrings.join('\n');
-  console.log(inputObjectArr);
-  console.log(inputObjString);
 
   if (userInput === '') {
     return alert('Please enter name and value!');
@@ -36,6 +22,38 @@ function handleSubmit(evt) {
     return alert('Please enter only English letters and numbers!');
   }
 
+  const userInputKey = userInput.trim().split('=');
+  const inputObject = {};
+
+  inputObject.name = userInputKey[0].trim();
+  inputObject.value = userInputKey[1].trim();
+
+  inputObjectArr.push(inputObject);
+
+  displayData(inputObjectArr);
+
   form.reset();
+}
+//відображення уведеної інформації
+function displayData(arr) {
+  const inputObjStrings = arr.map(item => {
+    return `${item.name}=${item.value}`;
+  });
+  const inputObjString = inputObjStrings.join('\n');
+  textAreaInput.textContent = inputObjString;
+}
+
+// сортування
+const sortBtn = document.querySelector('.sort-btn');
+sortBtn.addEventListener('click', handleClickByName);
+
+function handleClickByName(arr) {
+  const newArray = inputObjectArr.toSorted((firstItem, secondItem) =>
+    firstItem.name.localeCompare(secondItem.name)
+  );
+  const newInputObjStrings = newArray.map(item => {
+    return `${item.name}=${item.value}`;
+  });
+  const inputObjString = newInputObjStrings.join('\n');
   textAreaInput.textContent = inputObjString;
 }
