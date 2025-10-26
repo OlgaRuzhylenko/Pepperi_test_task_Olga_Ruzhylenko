@@ -57,3 +57,22 @@ function handleClickByName(arr) {
   const inputObjString = newInputObjStrings.join('\n');
   textAreaInput.textContent = inputObjString;
 }
+
+const sortBtn2 = document.querySelector('.sort-btn2');
+sortBtn2.addEventListener('click', handleClickByValue);
+function handleClickByValue() {
+  return alert('Sorry, this feature is currently under development.');
+}
+const sortBtn3 = document.querySelector('.sort-btn3');
+sortBtn3.addEventListener('click', handleClickXML);
+function handleClickXML() {
+  return alert('Sorry, this feature is currently under development.');
+}
+
+//видалення
+const deleteBtn = document.querySelector('.delete-btn');
+deleteBtn.addEventListener('click', handleClickDelete);
+
+function handleClickDelete(arr) {
+  textAreaInput.textContent = '';
+}
