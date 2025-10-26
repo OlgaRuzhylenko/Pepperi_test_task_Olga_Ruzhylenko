@@ -4,10 +4,7 @@ mainForm.addEventListener('submit', handleSubmit);
 const textAreaInput = document.querySelector('.form-textarea');
 
 const validation = /^[a-zA-Z0-9 =]+$/;
-const inputObject = {
-  name: '',
-  value: '',
-};
+const inputObjectArr = [];
 
 function handleSubmit(evt) {
   evt.preventDefault();
@@ -15,10 +12,19 @@ function handleSubmit(evt) {
   const userInput = form.elements.userinput.value;
   const userInputKey = userInput.trim().split('=');
   console.log(userInputKey);
+  const inputObject = {};
   inputObject.name = userInputKey[0].trim();
 
   inputObject.value = userInputKey[1].trim();
   console.log(inputObject);
+
+  inputObjectArr.push(inputObject);
+  const inputObjStrings = inputObjectArr.map(item => {
+    return `${item.name}: ${item.value}`;
+  });
+  const inputObjString = inputObjStrings.join('\n');
+  console.log(inputObjectArr);
+  console.log(inputObjString);
 
   if (userInput === '') {
     return alert('Please enter name and value!');
@@ -31,7 +37,5 @@ function handleSubmit(evt) {
   }
 
   form.reset();
-
-  textAreaInput.textContent = userInput;
-  console.log(typeof textAreaInput);
+  textAreaInput.textContent = inputObjString;
 }
